@@ -1,0 +1,30 @@
+{
+  "python.terminal.activateEnvironment": true,
+  "editor.showUnused": true,
+  "explorer.excludeGitIgnore": true,
+  "files.exclude": {
+    ".devcontainer": true,
+    ".eslintrc.json": true,
+    ".gitignore": true,
+    "eslint.config.js": true,
+    "package.json": true,
+    "prompty.json": true,
+    "requirements.txt": true,
+    "tsconfig.json": true
+  },
+  "promptyLanguageServer.trace.server": "verbose",
+  "prompty.modelConfigurations": [
+
+    {
+      "name": "default",
+      "type": "serverless",
+      "endpoint": "https://models.inference.ai.azure.com",
+      "model": "gpt-4o",
+    },
+    {
+      "name": "gpt-4o-mini",
+      "type": "openai",
+      "api_key": "${env:OPENAI_API_KEY}",
+    },
+  ]
+}

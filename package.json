@@ -1,0 +1,46 @@
+{
+  "name": "prompts",
+  "version": "1.0.0",
+  "description": "prompts",
+  "author": "LuapBlueEngineering <https://github.com/LuapBlueEngineering>",
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LuapBlueEngineering/prompts"
+  },
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "chromadb": "^1.7.3",
+    "@xenova/transformers": "^2.8.0"
+  },
+  "scripts": {
+    "lint": "eslint --max-warnings=0 .",
+    "lint:fix": "eslint --fix .",
+    "lint:unused": "eslint --fix --rule 'unused-imports/no-unused-imports: error' .",
+    "prepare": "husky install",
+
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.21.0",
+    "@typescript-eslint/eslint-plugin": "^8.25.0",
+    "@typescript-eslint/parser": "^8.25.0",
+    "eslint": "^9.9.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-unused-imports": "^4.1.4",
+    "globals": "^15.15.0",
+    "husky": "8.0.3",
+    "js-yaml": "^4.1.0",
+    "lint-staged": "^15.4.3",
+    "typescript": "^5.7.3",
+    "typescript-eslint": "^8.0.1"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "eslint --fix --rule 'unused-imports/no-unused-imports: error'"
+    ]
+  }
+}

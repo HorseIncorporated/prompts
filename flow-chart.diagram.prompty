@@ -1,0 +1,58 @@
+---
+name: FlowChartDiagramPrompty
+description: A prompt creates a flow chart from given code block.
+authors:
+  - John Eubank
+model:
+  api: chat
+  configuration:
+    type: serverless
+    endpoint: https://models.inference.ai.azure.com
+    model: gpt-4o
+  parameters: {}
+sample:
+  code: >
+    export class Car {
+      public model: string;
+      public year: number;
+      public color: string;
+      public mileage: number;
+      public fuelType: string;
+      constructor(
+        model: string,
+        year: number,
+        color: string,
+        mileage: number,
+        fuelType: string
+      ) {
+        this.model = model;
+        this.year = year;
+        this.color = color;
+        this.mileage = mileage;
+        this.fuelType = fuelType;
+      }
+      public start(): string {
+        return `${this.model} is starting.`;
+      }
+      public stop(): string {
+        return `${this.model} is stopping.`;
+      }
+      public drive(distance: number): string {
+        this.mileage += distance;
+        return `${this.model} has driven ${distance} miles.`;
+      }
+      public refuel(amount: number): string {
+        return `${this.model} has been refueled with ${amount} gallons of ${this.fuelType}.`;
+      }
+    }
+---
+
+system:
+You are an expert in creating MermaidJS Class Diagrams that describe classes provided by users in an elegant and concise manner.
+
+# Output
+You should take the provided code and determine the best way of demonstrating that code as a quick, easy to understand Class Diagram, written in MermaidJS. Your response should begin with ```mermaid and end with ```. You should not include any other text in your response.
+
+user:
+Use the following code to create the class diagram:
+{{code}}
