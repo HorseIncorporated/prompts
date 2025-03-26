@@ -1,4 +1,4 @@
-# prompts 🦆
+# prompts
 
 ## run in codespaces
 
